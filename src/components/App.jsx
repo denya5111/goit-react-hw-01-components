@@ -1,5 +1,7 @@
-import Profile from 'components/Profile';
-import user from "../user.json"
+import Profile from 'components/Profile/Profile';
+import user from "../components/Profile/user.json"
+import statistics from "../components/Statistics/data.json";
+import Statistics from './Statistics/Statistics';
 
 export const App = () => {
   return (
@@ -7,6 +9,8 @@ export const App = () => {
       style={{
         height: '100vh',
         display: 'flex',
+        flexDirection: 'column',
+        gap: '20px',
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
@@ -18,7 +22,14 @@ export const App = () => {
         tag={user.tag}
         location={user.location}
         avatar={user.avatar}
-        stats={user.stats} />
+        stats={user.stats}
+      />
+      
+        <Statistics
+        title="Upload stats"
+        stats={statistics}
+        />
+
     </div>
   );
 };
